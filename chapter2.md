@@ -82,7 +82,7 @@ Main advantages of Graph Data Model:
 - More natural for handling complex many-to-many relations in data
 - Not limited to homogeneous data, can provide a consistent way of storing completely different types of objects
 
-## Property Graphs with Cypher Query Language
+### Property Graphs with Cypher Query Language
 
 Basic structure of property graph model:
 - Each vertex consists of:
@@ -110,7 +110,7 @@ Graph data can be represented in a relational database, but could be cumbersome 
 
 ![Query Graph Data with SQL](./img/query-graph-data-with-sql.jpeg)
 
-## Triple-Stores with SPARQL
+### Triple-Stores with SPARQL
 
 Basic structure of Triple-Store model: all information is stored in the form of three-part statements: `(subject, predicate, object)`, where the subject of a triple is equivalent to a vertex in a graph, and the object is either a value in a primitive datatype, or another vertex in the graph
 
