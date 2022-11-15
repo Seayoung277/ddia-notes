@@ -35,7 +35,6 @@ Most document databases do not support join operation, thus many-to-one/many-to-
 
 ### How to Choose
 
-
 #### Relational Model
 
 - Pros:
@@ -56,3 +55,65 @@ Most document databases do not support join operation, thus many-to-one/many-to-
 - Cons:
     - Cannot refer directly to nested item
     - Huge documents seriously impact performance
+
+## Query Languages
+
+### Imperative and Declarative
+
+Imperative language tells the computer to perform certain operations in a certain order
+
+Declarative query language specifies the pattern of the data you want
+
+Advantages of declarative query language:
+- More concise and easier to work with
+- Hides implementation details of the database engine
+- Does not guarantee any ordering and doesn't mind if order changes
+- Easier to be executed in parallel
+
+### MapReduce Querying
+
+Restrictions of MapReduce: those functions must be stateless functions that only uses the data passed to them as input. They cannot performance additional queries, and must not have side effects
+
+MapReduce can be used to implement SQL query engines on distributed system
+
+## Graph Data Models
+
+Main advantages of Graph Data Model:
+- More natural for handling complex many-to-many relations in data
+- Not limited to homogeneous data, can provide a consistent way of storing completely different types of objects
+
+## Property Graphs with Cypher Query Language
+
+Basic structure of property graph model:
+- Each vertex consists of:
+    - A unique identifier
+    - A set of outgoing edges
+    - A set of incoming edges
+    - A collection of properties (key-value pairs)
+- Each Edge consists of:
+    - A unique identifier
+    - The vertex at which the edge starts (the tail vertex)
+    - The vertex at which the edge ends (the head vertex)
+    - A label to describe the kind of relationship between the two vertices
+    - A collection of properties (key-value pairs)
+
+Important aspects of property graph model:
+- Any vertex can have an edge connection it with any other vertex
+- Both incoming and outgoing edges can be efficiently found given any vertex, which helps easily traversing the graph
+- Several different kinds of information can be stored in a single graph by using different labels for different relationships
+
+Example of Cypher query language:
+
+![Cypher Query Language Example](./img/cypher-query-language.jpeg)
+
+Graph data can be represented in a relational database, but could be cumbersome to query with SQL. As the number of joins is not fixed, recursive common table expressions must be used to achieve variable-length traversal paths in a query
+
+![Query Graph Data with SQL](./img/query-graph-data-with-sql.jpeg)
+
+## Triple-Stores with SPARQL
+
+Basic structure of Triple-Store model: all information is stored in the form of three-part statements: `(subject, predicate, object)`, where the subject of a triple is equivalent to a vertex in a graph, and the object is either a value in a primitive datatype, or another vertex in the graph
+
+*In another way, Triple-Store is essentially normalized property graph where each property is treated as a single vertex*
+
+![Triple Store Example](./img/triple-store-with-sparql.jpeg)
