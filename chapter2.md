@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 2: Data Models and Query Languages
 
 ## Relational Model VS Document Model
 

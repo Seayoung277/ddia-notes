@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1: Reliable, Scalable, and Maintainable Applications
 
 System design components: database, cache, search/index, stream/messaging, batch processing
 
