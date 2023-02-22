@@ -27,3 +27,4 @@ Replication, Partitioning
 - Difference: whether write request waits for replication to finish before responding
 - Advantage of Sync: guaranteed to have up-to-date copy
 - Disadvantage of Sync: block all writes and wait till replica is available
+- In practice: one or a few followers are sync, the rest are async
